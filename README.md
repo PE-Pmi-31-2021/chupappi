@@ -1,6 +1,6 @@
 # chupappi
 
-## how to clone repo
+## How to clone repo
 
 With the August update of github security, firstly create ssh key, and add it to
 github in da settings.
@@ -20,3 +20,14 @@ git clone git@github.com:PE-Pmi-31-2021/chupappi.git
 ```
 
 🌜 You're welcome! 🌛
+
+## Commits and pull request convention
+
+[Read this doc](https://namingconvention.org/git/)
+
+- pull request
+	- branch name: feature, refactor, bugfix, hotfix /  branch name by dash | ex. feature/new-window-for-news
+	- commit: [ADD, FIX, TEMP, REFACTOR] describe what did you do
+	- pull request naming: [ADD, FIX, TEMP, REFACTOR] issue name
+
+For issues and tasks ask your PM ([karrtopelka](https://github.com/karrtopelka))
