@@ -2,7 +2,7 @@
 
 ## About 📚
 
-### project aim 🎯
+### Project aim 🎯
 Using our app, people can track, and trade blockchain currencies, watch news about that currencies and so on.
 
 ### Team 👨‍🎓🕵️‍♂️👨‍🎨🦸‍♂️🧙‍♂️
