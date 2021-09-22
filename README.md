@@ -1,6 +1,24 @@
-# chupappi
+# chupappi (CryptoEye) 👁
 
-## How to clone repo
+## About 📚
+
+### project aim 🎯
+Using our app, people can track, and trade blockchain currencies, watch news about that currencies and so on.
+
+### Team 👨‍🎓🕵️‍♂️👨‍🎨🦸‍♂️🧙‍♂️
+- Max Plotitsyn
+- Pavlo Matskiv
+- Roman Skaskiv
+- Kyrylo Karavaev
+- Oleh Matseyko
+
+### Technology stack
+- Windows Presentation Foundation
+- Entity Framework Core.
+
+## Dev. Docs 👨‍💻
+
+### How to clone repo
 
 With the August update of github security, firstly create ssh key, and add it to
 github in da settings.
@@ -21,7 +39,7 @@ git clone git@github.com:PE-Pmi-31-2021/chupappi.git
 
 🌜 You're welcome! 🌛
 
-## Commits and pull request convention
+### Commits and pull request convention
 
 [Read this doc](https://namingconvention.org/git/)
 
