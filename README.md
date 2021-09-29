@@ -50,3 +50,5 @@ git clone git@github.com:PE-Pmi-31-2021/chupappi.git
 	- pull request naming: [ADD, FIX, TEMP, REFACTOR] issue name
 
 For issues and tasks ask your PM ([karrtopelka](https://github.com/karrtopelka))
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=karrtopelka&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
