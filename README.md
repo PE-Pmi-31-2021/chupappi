@@ -51,4 +51,4 @@ git clone git@github.com:PE-Pmi-31-2021/chupappi.git
 
 For issues and tasks ask your PM ([karrtopelka](https://github.com/karrtopelka))
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=karrtopelka&repo=chupappi&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=karrtopelka&repo=fullstack-login-template)](https://github.com/anuraghazra/github-readme-stats)
