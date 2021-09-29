@@ -1,5 +1,6 @@
 # chupappi (CryptoEye) 👁
 Best free crypto watch solution
+
 [![Top Langs](https://github-readme-stats.vercel.app/api/pin/?username=PE-Pmi-31-2021&repo=chupappi)](https://github.com/anuraghazra/github-readme-stats)
 
 ## About 📚
