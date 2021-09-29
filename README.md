@@ -1,5 +1,5 @@
 # chupappi (CryptoEye) 👁
-Best free ctypro watch solution
+Best free crypto watch solution
 
 ## About 📚
 
