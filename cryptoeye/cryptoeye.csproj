@@ -191,6 +191,7 @@
         </ApplicationDefinition>
         <Compile Include="Hashing.cs" />
         <Compile Include="User.cs" />
+        <Compile Include="UserGenerator.cs" />
         <Page Include="MainWindow.xaml">
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>

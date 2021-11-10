@@ -10,11 +10,11 @@
             InitializeComponent();
 
             var user = App.Db.GetCollection<User>("user");
-            user.InsertOne(new User
+            var userGenerator = new UserGenerator();
+            for (int i = 0; i < 30; i++)
             {
-                Username = "karrtopelka", Email = "karrtopelka@gmail.com", Name = "Max", LastName = "Karrtopelka",
-                Password = Hashing.HashPassword("password")
-            });
+                user.InsertOne(userGenerator.Generate());
+            }
         }
     }
 }
