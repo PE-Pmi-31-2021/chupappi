@@ -25,10 +25,12 @@ namespace cryptoeye
 
             var user = App.Db.GetCollection<User>("users");
             var topics = App.Db.GetCollection<Topic>("topics");
-            // for (var i = 0; i < 2; i++)
-            // {
-            //     topics.InsertOne(TopicsGenerator.Generate());
-            // }
+            var cryptos = App.Db.GetCollection<Crypto>("cryptos");
+            var cryptoHistories = App.Db.GetCollection<HistoryPrice>("history_prices");
+             for (var i = 0; i < 30; i++)
+            {
+                 cryptoHistories.InsertOne(HistoryPriceGenerator.Generate());
+            }
 
             // var docs = GetAllTopics(topics);
             // docs.Wait();
