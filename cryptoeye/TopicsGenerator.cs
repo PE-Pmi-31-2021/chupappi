@@ -132,14 +132,14 @@ namespace cryptoeye
             "https://www.example.com/#box", "http://example.com/appliance.php", "http://example.com/#advice"
         };
         
-        public static Topics Generate()
+        public static Topic Generate()
         {
             var rnd = new Random();
             
             var topicName = CryptoNames[rnd.Next(CryptoNames.Length)];
             var randomUrls = RandomUrls[rnd.Next(RandomUrls.Length)];
             
-            return new Topics
+            return new Topic
             {
                 TopicName = topicName, TopicLink = randomUrls
             };

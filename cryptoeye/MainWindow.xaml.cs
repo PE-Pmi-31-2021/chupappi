@@ -24,7 +24,7 @@ namespace cryptoeye
             InitializeComponent();
 
             var user = App.Db.GetCollection<User>("users");
-            var topics = App.Db.GetCollection<Topics>("topics");
+            var topics = App.Db.GetCollection<Topic>("topics");
             // for (var i = 0; i < 2; i++)
             // {
             //     topics.InsertOne(TopicsGenerator.Generate());
