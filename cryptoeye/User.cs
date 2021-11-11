@@ -8,5 +8,6 @@ namespace cryptoeye
         public string LastName { get; set; }
         public string Password { get; set; }
         public MongoDB.Bson.ObjectId[] FavoriteTopics { get; set; }
+        public MongoDB.Bson.ObjectId[] FavoriteCryptos { get; set; }
     }
 }

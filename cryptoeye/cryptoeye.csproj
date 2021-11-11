@@ -189,7 +189,7 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
-        <Compile Include="Topics.cs" />
+        <Compile Include="Topic.cs" />
         <Compile Include="TopicsGenerator.cs" />
         <Compile Include="Hashing.cs" />
         <Compile Include="User.cs" />
