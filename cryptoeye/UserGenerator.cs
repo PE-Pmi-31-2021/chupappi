@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Linq;
 
 namespace cryptoeye
 {
     public class UserGenerator
     {
-        static string PasswordGenerator(int len, Random rnd)
+        private static string PasswordGenerator(int len, Random rnd)
         {
             var validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890?!@#$%^&*";
             var password = "";
@@ -15,7 +16,7 @@ namespace cryptoeye
             return password;
         }
 
-        static bool PasswordChecker(string password)
+        private static bool PasswordChecker(string password)
         {
             var lowerChars = "abcdefghijklmnopqrstuvwxyz";
             var upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -24,25 +25,17 @@ namespace cryptoeye
 
             string[] sets = {lowerChars, upperChars, numbers, specialChars};
 
-            foreach (var set in sets)
-            {
-                if (password.IndexOfAny(set.ToCharArray()) == -1)
-                {
-                    return false;
-                }
-            }
-
-            return true;
+            return sets.All(set => password.IndexOfAny(set.ToCharArray()) != -1);
         }
-        
-        static string UsernameGenerator(int len, Random rnd)
+
+        private static string UsernameGenerator(int len, Random rnd)
         {
             string[] consonants = { "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "l", "n", "p", "q", "r", "s", "sh", "zh", "t", "v", "w", "x" };
             string[] vowels = { "a", "e", "i", "o", "u", "ae", "y" };
-            string Name = "";
+            var Name = "";
             Name += consonants[rnd.Next(consonants.Length)].ToUpper();
             Name += vowels[rnd.Next(vowels.Length)];
-            int b = 2; 
+            var b = 2; 
             while (b < len)
             {
                 Name += consonants[rnd.Next(consonants.Length)];
@@ -639,7 +632,7 @@ namespace cryptoeye
             "Hendrix", "Rollins", "Rowland", "Whitney", "Duke", "Odom", "Daugherty", "Travis", "Tang"
         };
 
-        static string emailGenerator(string name, string surname)
+        private static string emailGenerator(string name, string surname)
         {
             return $"{name}{surname}@gmail.com".ToLower();
         }
