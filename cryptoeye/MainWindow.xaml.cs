@@ -27,16 +27,16 @@ namespace cryptoeye
             var topics = App.Db.GetCollection<Topic>("topics");
             var cryptos = App.Db.GetCollection<Crypto>("cryptos");
             var cryptoHistories = App.Db.GetCollection<HistoryPrice>("history_prices");
-             for (var i = 0; i < 30; i++)
+            var seenHistories = App.Db.GetCollection<SeenHistory>("seen_histories");
+             for (var i = 0; i < 3; i++)
             {
-                 cryptoHistories.InsertOne(HistoryPriceGenerator.Generate());
+                 seenHistories.InsertOne(SeenHistoryGenerator.Generate());
             }
 
             // var docs = GetAllTopics(topics);
             // docs.Wait();
-            // Console.WriteLine("Fuck");
+            
             // var res = docs.Result;
-            // Console.WriteLine("Fuck here");
             // foreach (var doc in res)
             // {
             //     Console.WriteLine(doc.ToString());
