@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
@@ -13,12 +14,11 @@ namespace cryptoeye
     /// </summary>
     public partial class MainWindow
     {
-        // private static async Task<List<Topics>> GetAllTopics(IMongoCollection<Topics> topics)
-        // {
-        //     var ll = await topics.Find(_ => true).ToListAsync();
-        //     return ll;
-        // }
-
+        public List<T> readCollection<T>(IMongoCollection<T> collection, FilterDefinition<T> filter = null)
+        {
+            if (filter == null) filter = Builders<T>.Filter.Empty;
+            return collection.Find(filter).ToList();
+        }
         public MainWindow()
         {
             InitializeComponent();
@@ -28,19 +28,13 @@ namespace cryptoeye
             var cryptos = App.Db.GetCollection<Crypto>("cryptos");
             var cryptoHistories = App.Db.GetCollection<HistoryPrice>("history_prices");
             var seenHistories = App.Db.GetCollection<SeenHistory>("seen_histories");
-             for (var i = 0; i < 3; i++)
-            {
-                 seenHistories.InsertOne(SeenHistoryGenerator.Generate());
-            }
 
-            // var docs = GetAllTopics(topics);
-            // docs.Wait();
+            /*var collection = readCollection(seenHistories);
             
-            // var res = docs.Result;
-            // foreach (var doc in res)
-            // {
-            //     Console.WriteLine(doc.ToString());
-            // }
+            foreach (var record in collection)
+            {
+                Console.WriteLine(record);
+            }*/
 
         }
     }
