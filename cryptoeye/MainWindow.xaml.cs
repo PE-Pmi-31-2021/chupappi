@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using MongoDB.Bson;
 using MongoDB.Driver;
 using OxyPlot;
+using OxyPlot.Axes;
 using OxyPlot.Series;
 
 namespace cryptoeye
@@ -30,22 +28,17 @@ namespace cryptoeye
 
             /*var user = App.Db.GetCollection<User>("users");
             var topics = App.Db.GetCollection<Topic>("topics");
-            var cryptos = App.Db.GetCollection<Crypto>("cryptos");
             var cryptoHistories = App.Db.GetCollection<HistoryPrice>("history_prices");
-            var seenHistories = App.Db.GetCollection<SeenHistory>("seen_histories");
-
-            var collection = ReadCollection(cryptoHistories, Builders<HistoryPrice>.Filter.Gt("Price", 4000));
-            
-            foreach (var record in collection)
-            {
-                Console.WriteLine(record);
-            }*/
+            var seenHistories = App.Db.GetCollection<SeenHistory>("seen_histories");*/
+            var cryptos = App.Db.GetCollection<Crypto>("cryptos");
+            var collection = ReadCollection(cryptos);
             Label.Content = "deinsid@gmail.com";
-            var r = new Random();
 
-            for (var i = 1; i < 4; i++)
+            var lpg = new LinepointsGenerator();
+            var rng = new Random();
+            for (int i = 1; i < 4; i++)
             {
-                for (var j = 0; j < 3; j++)
+                for (int j = 0; j < 3; j++)
                 {
                     var border = new Border
                     {
@@ -53,23 +46,64 @@ namespace cryptoeye
                         Width = 310,
                         Height = 155,
                         BorderThickness = new Thickness(1),
-                        BorderBrush = r.Next(1, 3) - 1 == 0 ? Brushes.LawnGreen : Brushes.Crimson,
                         Background = new SolidColorBrush(Colors.White)
                     };
 
-                    var dynamicLabel1 = new OxyPlot.Wpf.PlotView
-                    {
-                        Model = new PlotModel()
-                    };
+                    var dynamicLabel1 = new OxyPlot.Wpf.PlotView {Model = new PlotModel()};
 
                     var plotModel = new PlotModel
                     {
-                        Title = "Bitcoin",
+                        Title = collection[((i-1)*3) + j].Name,
                         PlotType = PlotType.Cartesian,
-                        Background = OxyColors.White
+                        Background = OxyColors.White,
+                        TitlePadding = 0,
+                        TitleFontSize = 24
                     };
-                    plotModel.Series.Add(new FunctionSeries(Math.Sin, -10, 10, 0.1, "sin(x)")
-                        {Color = OxyColors.Black});
+                    var items = lpg.linepointsGenerator(rng.Next(0, 10000));
+                    var max = items.Max(point => point.X);
+                    var min = items.Min(point => point.X);
+                    var timeSPanAxis1 = new DateTimeAxis()
+                    {
+                        Position = AxisPosition.Bottom,
+                        TicklineColor = OxyColor.FromRgb(255,255,255),
+                        IntervalLength = 75,
+                        MinorIntervalType = DateTimeIntervalType.Days,
+                        IntervalType = DateTimeIntervalType.Days,
+                        Maximum = max,
+                        Minimum = min
+                    };
+                    plotModel.Axes.Add(timeSPanAxis1);
+                    max = items.Max(point => point.Y);
+                    min = items.Min(point => point.Y);
+                    LinearAxis linearAxis1 = new LinearAxis()
+                    {
+                        TicklineColor = OxyColor.FromRgb(255,255,255),
+                        Maximum = max,
+                        Minimum = min
+                    };
+                    OxyColor color;
+                    if (items[0].Y < items[items.Length - 1].Y)
+                    {
+                     color = OxyColors.Green;
+
+                     border.BorderBrush = Brushes.LawnGreen;
+                    }
+                    else
+                    {
+                     color = OxyColors.Red;
+
+                     border.BorderBrush = Brushes.DarkRed;
+                    }
+
+                    var series = new LineSeries
+                    {
+                        Color = color,
+                        DataFieldX = "X",
+                        ItemsSource = items
+                    };
+
+                    plotModel.Axes.Add(linearAxis1);
+                    plotModel.Series.Add(series);
                     plotModel.PlotAreaBorderColor = OxyColors.Transparent;
                     dynamicLabel1.Model = plotModel;
 
