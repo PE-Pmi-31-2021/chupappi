@@ -6,12 +6,9 @@ Best free crypto watch solution
 ### Project aim 🎯
 Using our app, people can track, and trade blockchain currencies, watch news about that currencies and so on.
 
-### Team 👨‍🎓🕵️‍♂️👨‍🎨🦸‍♂️🧙‍♂️
-- Max Plotitsyn
-- Pavlo Matskiv
-- Roman Skaskiv
-- Kyrylo Karavaev
-- Oleh Matseyko
+### Team
+- Max Plotitsyn 💅
+- Pavlo Matskiv 🐒
 
 ### Technology stack
 - Windows Presentation Foundation
