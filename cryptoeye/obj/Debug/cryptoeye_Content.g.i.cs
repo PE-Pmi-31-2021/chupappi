@@ -9,6 +9,7 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("appsettings.json")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/gorilla.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/compression/snappy/lib/linux/libsnappy64.so")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/compression/snappy/lib/osx/libsnappy64.dylib")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("core/compression/snappy/lib/win/snappy32.dll")]
