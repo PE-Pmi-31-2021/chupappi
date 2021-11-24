@@ -11,10 +11,10 @@ namespace cryptoeye
     /// </summary>
     public partial class App
     {
-        private static IConfiguration Configuration { get; set; }
+        public static IConfiguration Configuration { get; set; }
 
-        private static MongoClient Client { get; set; }
-        public static IMongoDatabase Db { get; private set; }
+        public static MongoClient Client { get; set; }
+        public static IMongoDatabase Db { get; set; }
 
         protected override void OnStartup(StartupEventArgs e)
         {
