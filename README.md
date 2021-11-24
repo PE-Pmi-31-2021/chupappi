@@ -7,8 +7,8 @@ Best free crypto watch solution
 Using our app, people can track, and trade blockchain currencies, watch news about that currencies and so on.
 
 ### Team
-- Max Plotitsyn 💅
-- Pavlo Matskiv 🐒
+- Max Plotitsyn 💅 [karrtopelka](https://github.com/karrtopelka)
+- Pavlo Matskiv 🐒 [Deainsi](https://github.com/Deainsi)
 
 ### Technology stack
 - Windows Presentation Foundation
