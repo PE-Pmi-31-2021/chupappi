@@ -15,8 +15,6 @@ namespace cryptoeye
 
         private static MongoClient Client { get; set; }
 
-        public static IMongoDatabase Db { get; private set; }
-
         protected override void OnStartup(StartupEventArgs e)
         {
             var builder = new ConfigurationBuilder()
@@ -26,7 +24,7 @@ namespace cryptoeye
             Configuration = builder.Build();
 
             Client = new MongoClient(Configuration.GetConnectionString("MongoDb"));
-            Db = Client.GetDatabase("cryptoeye");
+            Client.GetDatabase("cryptoeye");
         }
     }
 }

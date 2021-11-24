@@ -3,9 +3,9 @@ using MongoDB.Bson;
 
 namespace cryptoeye
 {
-    public class SeenHistoryGenerator
+    public static class SeenHistoryGenerator
     {
-        private static string[] userIds =
+        private static readonly string[] UserIds =
         {
             "618c651305e268a873da6dd1", "618c651305e268a873da6ed9", "618c651405e268a873da6f7c",
             "618c651405e268a873da72c5", "618c651405e268a873da7361", "618c651505e268a873da73cf",
@@ -129,28 +129,30 @@ namespace cryptoeye
             "Adelphoi"
         };
 
-        private static string homeRoute = "home/";
-        private static string[] names = {"Home", "Crypto", "Profile"};
+        private const string HomeRoute = "home/";
+        private static readonly string[] Names = {"Home", "Crypto", "Profile"};
 
         public static SeenHistory Generate()
         {
             var rnd = new Random();
-            var userId = userIds[rnd.Next(userIds.Length)];
-            var name = names[rnd.Next(3)];
-            var location = homeRoute;
+            var userId = UserIds[rnd.Next(UserIds.Length)];
+            var name = Names[rnd.Next(3)];
+            var location = HomeRoute;
 
-            if (name == "Crypto")
+            switch (name)
             {
-                var cryptoName = CryptoNames[rnd.Next(CryptoNames.Length)];
-                location += $"crypto/{cryptoName}";
-            }
-            else if (name == "Profile")
-            {
-                location += $"user/{userIds}";
+                case "Crypto":
+                {
+                    var cryptoName = CryptoNames[rnd.Next(CryptoNames.Length)];
+                    location += $"crypto/{cryptoName}";
+                    break;
+                }
+                case "Profile":
+                    location += $"user/{UserIds}";
+                    break;
             }
 
             return new SeenHistory {UserId = new ObjectId(userId), Location = location, Name = name};
         }
-        
     }
 }

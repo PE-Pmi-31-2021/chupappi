@@ -2,7 +2,7 @@
 
 namespace cryptoeye
 {
-    public class CryptoGenerator
+    public static class CryptoGenerator
     {
         private static readonly string[] CryptoNames =
         {
@@ -111,13 +111,12 @@ namespace cryptoeye
         public static Crypto Generate()
         {
             var rnd = new Random();
-            
+
             var name = CryptoNames[rnd.Next(CryptoNames.Length)];
-            var apiId = name;
-            
+
             return new Crypto
             {
-                Name = name, ApiId = apiId
+                Name = name, ApiId = name
             };
         }
     }
