@@ -2,7 +2,7 @@ using System;
 
 namespace cryptoeye
 {
-    public class TopicsGenerator
+    public static class TopicsGenerator
     {
         private static readonly string[] CryptoNames =
         {
@@ -131,19 +131,18 @@ namespace cryptoeye
             "http://blow.example.com/", "http://www.example.com/", "http://www.example.com/ants",
             "https://www.example.com/#box", "http://example.com/appliance.php", "http://example.com/#advice"
         };
-        
+
         public static Topic Generate()
         {
             var rnd = new Random();
-            
+
             var topicName = CryptoNames[rnd.Next(CryptoNames.Length)];
             var randomUrls = RandomUrls[rnd.Next(RandomUrls.Length)];
-            
+
             return new Topic
             {
                 TopicName = topicName, TopicLink = randomUrls
             };
-
         }
     }
 }

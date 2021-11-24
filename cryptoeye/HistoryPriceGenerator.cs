@@ -3,9 +3,9 @@ using MongoDB.Bson;
 
 namespace cryptoeye
 {
-    public class HistoryPriceGenerator
+    public static class HistoryPriceGenerator
     {
-        private static string[] cryptoIds =
+        private static readonly string[] CryptoIds =
         {
             "618c69bb05e268a873e31c42", "618c69bb05e268a873e31c5b", "618c69bb05e268a873e31c6b",
             "618c69bb05e268a873e31c86", "618c69bb05e268a873e31c94", "618c69bb05e268a873e31cbc",
@@ -18,22 +18,22 @@ namespace cryptoeye
             "618c69bc05e268a873e31ea0", "618c69bc05e268a873e31eb5", "618c69bc05e268a873e31ec9",
             "618c69bc05e268a873e31ede", "618c69bc05e268a873e31f09"
         };
-    
-        private static DateTime dayGenerator(Random rnd)
+
+        private static DateTime DayGenerator(Random rnd)
         {
-            DateTime start = new DateTime(2009, 1, 1);
-            int range = (DateTime.Today - start).Days;           
+            var start = new DateTime(2009, 1, 1);
+            var range = (DateTime.Today - start).Days;
             return start.AddDays(rnd.Next(range));
         }
 
         public static HistoryPrice Generate()
         {
             var rnd = new Random();
-            var date = dayGenerator(rnd);
-            var price = rnd.NextDouble()*rnd.Next(10000);
-            var cryptoId = cryptoIds[rnd.Next(cryptoIds.Length)];
-            
-            return new HistoryPrice { Date = date, Price = price, CryptoId = new ObjectId(cryptoId)};
+            var date = DayGenerator(rnd);
+            var price = rnd.NextDouble() * rnd.Next(10000);
+            var cryptoId = CryptoIds[rnd.Next(CryptoIds.Length)];
+
+            return new HistoryPrice {Date = date, Price = price, CryptoId = new ObjectId(cryptoId)};
         }
     }
 }

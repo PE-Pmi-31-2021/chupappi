@@ -3,75 +3,69 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:oxy="clr-namespace:OxyPlot.Wpf;assembly=OxyPlot.Wpf"
         mc:Ignorable="d"
-        Title="CryptoEye" Height="600" Width="1024"
-        WindowStyle="None"
-        ResizeMode="NoResize"
-        Background="Transparent"
-        AllowsTransparency="True">
-        <Border Background="#E5E5E5" CornerRadius="20">
-                <Grid x:Name="Grid">
-                        <Grid.ColumnDefinitions>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                                <ColumnDefinition></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        
-                        <Grid.RowDefinitions>
-                                <RowDefinition Height="90"></RowDefinition>
-                                <RowDefinition></RowDefinition>
-                                <RowDefinition></RowDefinition>
-                                <RowDefinition></RowDefinition>
-                        </Grid.RowDefinitions>
-                        
-                        <Border Background="#4F4F4F" Grid.ColumnSpan="3" Height="90" Width="1024"
-                                BorderBrush="Black" CornerRadius="20 20 0 0">
-                                <Grid>
-                                        <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="150px" />
-                                                <ColumnDefinition />
-                                                <ColumnDefinition Width="150px" />
-                                                <ColumnDefinition Width="50px" />
-                                        </Grid.ColumnDefinitions>
-                                        <Label HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20px" FontWeight="Bold"
-                                               Foreground="White">
-                                                CryptoEye
-                                        </Label>
-                                        
-                                        <Border Grid.Column="1"  CornerRadius="5" BorderThickness="1" Background="#f2f2f2" BorderBrush="#2D9CDB" Height="35">
-                                                
-                                                <TextBox Background="#F2F2F2" Padding="5" VerticalAlignment="Center" x:Name="SearchTermTextBox" BorderThickness = "0"/>
-                                        
-                                        </Border>
-                                        <TextBlock Grid.Column="1" IsHitTestVisible="False" Padding = "1 0 0 0" Text="  Search ..." VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#828282">
-                                                <TextBlock.Style>
-                                                        <Style TargetType="{x:Type TextBlock}">
-                                                                <Setter Property="Visibility" Value="Collapsed"/>
-                                                                        <Style.Triggers>
-                                                                                <DataTrigger Binding="{Binding Text, ElementName=SearchTermTextBox}" Value="">
-                                                                                        <Setter Property="Visibility" Value="Visible"/>
-                                                                                </DataTrigger>
-                                                                        </Style.Triggers>
-                                                                </Style>
-                                                        </TextBlock.Style>
-                                        </TextBlock>
-                                        
-                                        <Label Grid.Column="2" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center" x:Name="Label"
-                                               FontSize="12px">
-                                                user@gmail.com
-                                        </Label>
-                                        <Border Grid.Column="3" CornerRadius="50" Height="50">
-                                                <Border.Background>
-                                                        <ImageBrush Stretch="Fill" ImageSource="assets/gorilla.png"/>
-                                                </Border.Background>
-                                        </Border>
-                                </Grid>
-                                
+        Title="CryptoEye" Height="720" Width="1024"
+        ResizeMode="NoResize">
+    <Border Background="#E5E5E5">
+        <Grid x:Name="Grid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <TextBlock Background="#4F4F4F" Grid.ColumnSpan="3" Height="50" Width="1024">
+                <Grid Width="1024" Height="50">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150px" />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="250px" />
+                    </Grid.ColumnDefinitions>
+                    <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16px" FontWeight="Bold"
+                           Foreground="White">
+                        👁 CryptoEye
+                    </Label>
+
+                    <Border Grid.Column="1" CornerRadius="5" BorderThickness="1" Background="#F2F2F2"
+                            BorderBrush="#2D9CDB" Height="25">
+                        <TextBox Background="#F2F2F2" Margin="5 0" VerticalAlignment="Center"
+                                 x:Name="SearchTermTextBox"
+                                 BorderThickness="0" />
+                    </Border>
+                    <TextBlock Grid.Column="1" IsHitTestVisible="False" Padding="5 0 0 0" Text="  Search ..."
+                               VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#828282">
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Text, ElementName=SearchTermTextBox}" Value="">
+                                        <Setter Property="Visibility" Value="Visible" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                    <TextBlock Grid.Column="2" VerticalAlignment="Center" TextAlignment="Center">
+                        <Label Foreground="#FFFFFF"
+                               x:Name="Label"
+                               FontSize="16px">
+                            user@gmail.com
+                        </Label>
+                        <Border CornerRadius="50" Height="32" Width="32" Margin="5 0 0 0">
+                            <Border.Background>
+                                <ImageBrush Stretch="Fill" ImageSource="assets/gorilla.png" />
+                            </Border.Background>
                         </Border>
+                    </TextBlock>
                 </Grid>
-                
-                
-        </Border>
-        
+            </TextBlock>
+        </Grid>
+    </Border>
 </Window>
