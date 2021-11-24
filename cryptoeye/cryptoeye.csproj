@@ -209,6 +209,7 @@
         <Compile Include="CryptoGenerator.cs" />
         <Compile Include="HistoryPrice.cs" />
         <Compile Include="HistoryPriceGenerator.cs" />
+        <Compile Include="LinepointsGenerator.cs" />
         <Compile Include="SeenHistory.cs" />
         <Compile Include="SeenHistoryGenerator.cs" />
         <Compile Include="Topic.cs" />
