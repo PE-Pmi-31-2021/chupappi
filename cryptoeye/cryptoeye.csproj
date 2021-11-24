@@ -103,6 +103,19 @@
             <Private>True</Private>
         </Reference>
         <Reference Include="mscorlib" />
+        <Reference Include="OxyPlot, Version=2.1.0.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9">
+          <HintPath>..\packages\OxyPlot.Core.2.1.0\lib\net45\OxyPlot.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="OxyPlot.Wpf, Version=2.1.0.0, Culture=neutral, PublicKeyToken=75e952ba404cdbb0">
+          <HintPath>..\packages\OxyPlot.Wpf.2.1.0\lib\net45\OxyPlot.Wpf.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="OxyPlot.Wpf.Shared, Version=2.1.0.0, Culture=neutral, PublicKeyToken=75e952ba404cdbb0">
+          <HintPath>..\packages\OxyPlot.Wpf.Shared.2.1.0\lib\net45\OxyPlot.Wpf.Shared.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="ReachFramework" />
         <Reference Include="SharpCompress, Version=0.23.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96">
             <HintPath>..\packages\SharpCompress.0.23.0\lib\net45\SharpCompress.dll</HintPath>
             <Private>True</Private>
@@ -132,6 +145,7 @@
             <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
             <Private>True</Private>
         </Reference>
+        <Reference Include="System.Printing" />
         <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
             <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
             <Private>True</Private>
@@ -189,6 +203,12 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
+        <Compile Include="Crypto.cs" />
+        <Compile Include="CryptoGenerator.cs" />
+        <Compile Include="HistoryPrice.cs" />
+        <Compile Include="HistoryPriceGenerator.cs" />
+        <Compile Include="SeenHistory.cs" />
+        <Compile Include="SeenHistoryGenerator.cs" />
         <Compile Include="Topic.cs" />
         <Compile Include="TopicsGenerator.cs" />
         <Compile Include="Hashing.cs" />
@@ -227,6 +247,9 @@
     </ItemGroup>
     <ItemGroup>
         <Content Include="appsettings.json">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="assets\gorilla.png">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
         <Content Include="Core\Compression\Snappy\lib\linux\libsnappy64.so" />
