@@ -16,7 +16,7 @@ namespace cryptoeye
     /// </summary>
     public partial class MainWindow
     {
-        private static List<T> ReadCollection<T>(IMongoCollection<T> collection, FilterDefinition<T> filter = null)
+        public static List<T> ReadCollection<T>(IMongoCollection<T> collection, FilterDefinition<T> filter = null)
         {
             if (filter == null) filter = Builders<T>.Filter.Empty;
             return collection.Find(filter).ToList();
@@ -36,9 +36,9 @@ namespace cryptoeye
 
             var lpg = new LinepointsGenerator();
             var rng = new Random();
-            for (int i = 1; i < 4; i++)
+            for (var i = 1; i < 4; i++)
             {
-                for (int j = 0; j < 3; j++)
+                for (var j = 0; j < 3; j++)
                 {
                     var border = new Border
                     {
@@ -75,7 +75,7 @@ namespace cryptoeye
                     plotModel.Axes.Add(timeSPanAxis1);
                     max = items.Max(point => point.Y);
                     min = items.Min(point => point.Y);
-                    LinearAxis linearAxis1 = new LinearAxis()
+                    var linearAxis1 = new LinearAxis()
                     {
                         TicklineColor = OxyColor.FromRgb(255,255,255),
                         Maximum = max,
