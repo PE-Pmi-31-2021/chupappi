@@ -150,3 +150,10 @@ C:\Users\user\Desktop\pt\chupappi\cryptoeye\obj\Debug\cryptoeye.csproj.CoreCompi
 C:\Users\user\Desktop\pt\chupappi\cryptoeye\obj\Debug\cryptoeye.csproj.CopyComplete
 C:\Users\user\Desktop\pt\chupappi\cryptoeye\obj\Debug\cryptoeye.exe
 C:\Users\user\Desktop\pt\chupappi\cryptoeye\obj\Debug\cryptoeye.pdb
+C:\Users\user\Desktop\pt\chupappi\cryptoeye\bin\Debug\assets\gorilla.png
+C:\Users\user\Desktop\pt\chupappi\cryptoeye\bin\Debug\OxyPlot.dll
+C:\Users\user\Desktop\pt\chupappi\cryptoeye\bin\Debug\OxyPlot.Wpf.dll
+C:\Users\user\Desktop\pt\chupappi\cryptoeye\bin\Debug\OxyPlot.Wpf.Shared.dll
+C:\Users\user\Desktop\pt\chupappi\cryptoeye\bin\Debug\OxyPlot.xml
+C:\Users\user\Desktop\pt\chupappi\cryptoeye\bin\Debug\OxyPlot.Wpf.xml
+C:\Users\user\Desktop\pt\chupappi\cryptoeye\bin\Debug\OxyPlot.Wpf.Shared.xml
