@@ -1,2 +1,3 @@
 .idea
 cryptoeye/appsettings.json
+cryptoeye/**/logs/

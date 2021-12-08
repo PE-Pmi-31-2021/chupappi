@@ -173,3 +173,6 @@ C:\Users\karrt\Documents\lnu\lnu\prog\cryptoeye\cryptoeye\bin\Debug\OxyPlot.Wpf.
 C:\Users\karrt\Documents\lnu\lnu\prog\cryptoeye\cryptoeye\bin\Debug\OxyPlot.Wpf.Shared.xml
 C:\Users\karrt\Documents\lnu\lnu\prog\cryptoeye\cryptoeye\obj\Debug\cryptoeye.csproj.AssemblyReference.cache
 C:\Users\karrt\Documents\lnu\lnu\prog\cryptoeye\cryptoeye\obj\Debug\cryptoeye.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\pt\chupappi\cryptoeye\bin\Debug\log4net.dll
+C:\Users\user\Desktop\pt\chupappi\cryptoeye\bin\Debug\log4net.xml
+C:\Users\user\Desktop\pt\chupappi\cryptoeye\bin\Debug\log4net.config
